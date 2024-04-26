@@ -6,8 +6,16 @@ public class Expense {
 
     //constructores 
     public Expense(double gasto, String tipogasto) throws Invalid1, Invalid2{
+    	if(gasto<=0) {
+    		throw new Invalid1();
+    	}
+    	else if (tipogasto.equals("")){
+    		throw new Invalid2();
+    	}
+    	else {
         this.gasto=gasto;
         this.tipogasto=tipogasto;
+    	}
     }
     
     //metodos publicos
@@ -27,4 +35,16 @@ public class Expense {
 		tipogasto = tipogasto;
 	}
     
+}
+
+class Invalid1 extends Exception{
+	public Invalid1(){
+		super("El valor del gasto no puede ser negativo");
+		}
+}
+
+class Invalid2 extends Exception{
+	public Invalid2(){
+		super("Debes instroducir un tipo de gasto");
+		}
 }
