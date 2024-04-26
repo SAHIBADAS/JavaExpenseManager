@@ -15,4 +15,11 @@ public class ExpenseManager{
     	   gastotipo[indicegasto]=g.getTipogasto();
     	   indicegasto++;
        }
+    static void saveDataFromFile(){
+        //TODO: add logic to upload file
+    }
+
+    static void loadData(){
+        //TODO: add logic to load data
+    }
     }
